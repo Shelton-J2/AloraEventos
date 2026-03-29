@@ -1,8 +1,5 @@
 /* ===========================
    ALORA EVENTOS — script.js
-   Manually re-wrote pages for web 
-   expression can't read modern js 
-   practices.
 =========================== */
 (function () {
   "use strict";
