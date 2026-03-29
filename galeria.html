@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria — Alora Eventos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="eventos.html">Alora <span>Eventos</span></a></div>
+    <div class="nav-links">
+      <a href="eventos.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="galeria.html" class="active">Galeria</a>
+      <a href="simulador.html">Simulador</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="contactos.html">Contactos</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1 class="fade-in">Galeria de Eventos</h1>
+    <p class="fade-in">Alguns dos nossos materiais e eventos decorados pela Alora.</p>
+  </div>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-grid">
+    <div class="gallery-item"><img src="imagens/foto1.jpg"  alt="Evento Alora 1" /></div>
+    <div class="gallery-item"><img src="imagens/foto2.jpg"  alt="Evento Alora 2" /></div>
+    <div class="gallery-item"><img src="imagens/foto3.jpg"  alt="Evento Alora 3" /></div>
+    <div class="gallery-item"><img src="imagens/foto4.jpg"  alt="Evento Alora 4" /></div>
+    <div class="gallery-item"><img src="imagens/foto5.jpg"  alt="Evento Alora 5" /></div>
+    <div class="gallery-item"><img src="imagens/foto6.jpg"  alt="Evento Alora 6" /></div>
+    <div class="gallery-item"><img src="imagens/foto7.jpg"  alt="Evento Alora 7" /></div>
+    <div class="gallery-item"><img src="imagens/foto8.jpg"  alt="Evento Alora 8" /></div>
+    <div class="gallery-item"><img src="imagens/foto9.jpg"  alt="Evento Alora 9" /></div>
+    <div class="gallery-item"><img src="imagens/foto10.jpg" alt="Evento Alora 10" /></div>
+    <div class="gallery-item"><img src="imagens/foto11.jpg" alt="Evento Alora 11" /></div>
+    <div class="gallery-item"><img src="imagens/foto12.jpg" alt="Evento Alora 12" /></div>
+    <div class="gallery-item"><img src="imagens/foto13.jpg" alt="Evento Alora 13" /></div>
+    <div class="gallery-item"><img src="imagens/foto14.jpg" alt="Evento Alora 14" /></div>
+    <div class="gallery-item"><img src="imagens/foto15.jpg" alt="Evento Alora 15" /></div>
+    <div class="gallery-item"><img src="imagens/foto16.jpg" alt="Evento Alora 16" /></div>
+    <div class="gallery-item"><img src="imagens/foto17.jpg" alt="Evento Alora 17" /></div>
+    <div class="gallery-item"><img src="imagens/foto18.jpg" alt="Evento Alora 18" /></div>
+    <div class="gallery-item"><img src="imagens/foto19.jpg" alt="Evento Alora 19" /></div>
+    <div class="gallery-item"><img src="imagens/foto20.jpg" alt="Evento Alora 20" /></div>
+    <div class="gallery-item"><img src="imagens/foto21.jpg" alt="Evento Alora 21" /></div>
+    <div class="gallery-item"><img src="imagens/foto22.jpg" alt="Evento Alora 22" /></div>
+    <div class="gallery-item"><img src="imagens/foto23.jpg" alt="Evento Alora 23" /></div>
+    <div class="gallery-item"><img src="imagens/foto24.jpg" alt="Evento Alora 24" /></div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden">
+    <button class="lb-close">&times;</button>
+    <button class="lb-prev">&#8592;</button>
+    <img id="lightbox-img" src="" alt="Imagem ampliada" />
+    <button class="lb-next">&#8594;</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="eventos.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="simulador.html">Simulador</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="contactos.html">Contactos</a>
+    </div>
+    <p>&copy; 2025 <strong>Alora Eventos</strong> — All Ventures. Todos os direitos reservados.</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/258843988947" target="_blank" title="Contactar pelo WhatsApp">💬</a>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function(){
+      this.classList.toggle('open');
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

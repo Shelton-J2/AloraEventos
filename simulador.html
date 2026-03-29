@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Evento — Alora Eventos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="eventos.html">Alora <span>Eventos</span></a></div>
+    <div class="nav-links">
+      <a href="eventos.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="simulador.html" class="active">Simulador</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="contactos.html">Contactos</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1 class="fade-in">Simulador de Evento</h1>
+    <p class="fade-in">Escolha as suas preferências e veja como ficará a sua mesa antes de reservar.</p>
+  </div>
+
+  <!-- Simulator -->
+  <div class="simulator-wrap">
+
+    <!-- Controls Panel -->
+    <aside class="sim-controls">
+      <h3>Personalizar Mesa</h3>
+      <p>Ajuste cada elemento e a pré-visualização actualiza em tempo real.</p>
+
+      <!-- Toalha -->
+      <div class="sim-group">
+        <label>Toalha de Mesa</label>
+        <div class="sim-color-opts" id="opt-toalha">
+          <div class="sim-color selected" data-group="toalha" data-value="branca"   style="background:#ffffff; border:2px solid #ddd;" title="Branca"></div>
+          <div class="sim-color"          data-group="toalha" data-value="verde"    style="background:#2d7a3a;" title="Verde"></div>
+          <div class="sim-color"          data-group="toalha" data-value="vermelha" style="background:#c0392b;" title="Vermelha"></div>
+          <div class="sim-color"          data-group="toalha" data-value="laranja"  style="background:#e67e22;" title="Laranja"></div>
+          <div class="sim-color"          data-group="toalha" data-value="preta"    style="background:#1a1a1a;" title="Preta"></div>
+        </div>
+      </div>
+
+      <!-- Cadeiras -->
+      <div class="sim-group">
+        <label>Cadeiras</label>
+        <div class="sim-options" id="opt-cadeira">
+          <div class="sim-opt selected" data-group="cadeira" data-value="tiffany-gold">Tiffany Dourada</div>
+          <div class="sim-opt"          data-group="cadeira" data-value="tiffany-branca">Tiffany Branca</div>
+        </div>
+      </div>
+
+      <!-- Guardanapos -->
+      <div class="sim-group">
+        <label>Guardanapos</label>
+        <div class="sim-color-opts" id="opt-guardanapo">
+          <div class="sim-color selected" data-group="guardanapo" data-value="branco"    style="background:#f5f5f5; border:2px solid #ddd;" title="Branco"></div>
+          <div class="sim-color"          data-group="guardanapo" data-value="vermelho"  style="background:#c0392b;" title="Vermelho"></div>
+          <div class="sim-color"          data-group="guardanapo" data-value="castanho"  style="background:#7b4a2d;" title="Castanho"></div>
+          <div class="sim-color"          data-group="guardanapo" data-value="verde"     style="background:#2d7a3a;" title="Verde"></div>
+        </div>
+      </div>
+
+      <!-- Copos -->
+      <div class="sim-group">
+        <label>Tipo de Copo</label>
+        <div class="sim-options" id="opt-copo">
+          <div class="sim-opt selected" data-group="copo" data-value="agua">Água</div>
+          <div class="sim-opt"          data-group="copo" data-value="vinho">Vinho</div>
+          <div class="sim-opt"          data-group="copo" data-value="champanhe">Champanhe</div>
+        </div>
+      </div>
+
+      <!-- Centro de mesa -->
+      <div class="sim-group">
+        <label>Centro de Mesa</label>
+        <div class="sim-options" id="opt-centro">
+          <div class="sim-opt selected" data-group="centro" data-value="flores">Flores Artificiais</div>
+          <div class="sim-opt"          data-group="centro" data-value="globos">Globos</div>
+          <div class="sim-opt"          data-group="centro" data-value="nenhum">Sem Centro</div>
+        </div>
+      </div>
+
+      <!-- Talheres -->
+      <div class="sim-group">
+        <label>Talheres</label>
+        <div class="sim-options" id="opt-talher">
+          <div class="sim-opt selected" data-group="talher" data-value="prata">Prata</div>
+          <div class="sim-opt"          data-group="talher" data-value="dourado">Dourado</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Preview Panel -->
+    <div class="sim-preview">
+      <div class="sim-preview-label">
+        <h3>Pré-visualização da Mesa</h3>
+        <p>Actualiza em tempo real</p>
+      </div>
+
+      <div id="sim-canvas-wrap">
+        <!-- SVG rendered by JS -->
+      </div>
+
+      <div class="sim-note">
+        ⚠️ Esta simulação inclui apenas os elementos personalizáveis. Itens como Banho Maria, Cenário de Fotos, Serviço de Chá/Café e outros materiais de buffet têm apresentação fixa — consulte os nossos <a href="servicos.html" style="color:var(--gold-dim);">Serviços</a> para ver o catálogo completo.
+      </div>
+
+      <button class="sim-whatsapp-btn" id="simWhatsapp">
+        💬 Enviar Paleta pelo WhatsApp
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="eventos.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="simulador.html">Simulador</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="contactos.html">Contactos</a>
+    </div>
+    <p>&copy; 2025 <strong>Alora Eventos</strong> — All Ventures. Todos os direitos reservados.</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/258843988947" target="_blank" title="Contactar pelo WhatsApp">💬</a>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function(){
+      this.classList.toggle('open');
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+
+    // =====================
+    //  SIMULATOR LOGIC
+    // =====================
+    var state = {
+      toalha:     'branca',
+      cadeira:    'tiffany-gold',
+      guardanapo: 'branco',
+      copo:       'agua',
+      centro:     'flores',
+      talher:     'prata'
+    };
+
+    var toalhaColors = {
+      branca:   '#f8f8f8',
+      verde:    '#2d7a3a',
+      vermelha: '#c0392b',
+      laranja:  '#e67e22',
+      preta:    '#1a1a1a'
+    };
+
+    var guardanapoColors = {
+      branco:   '#f5f5f5',
+      vermelho: '#c0392b',
+      castanho: '#7b4a2d',
+      verde:    '#2d7a3a'
+    };
+
+    var toalhaLabels    = { branca:'Branca', verde:'Verde', vermelha:'Vermelha', laranja:'Laranja', preta:'Preta' };
+    var cadeiraLabels   = { 'tiffany-gold':'Tiffany Dourada', 'tiffany-branca':'Tiffany Branca' };
+    var guardLabels     = { branco:'Branco', vermelho:'Vermelho', castanho:'Castanho', verde:'Verde' };
+    var copoLabels      = { agua:'Copo de Água', vinho:'Taça de Vinho', champanhe:'Taça de Champanhe' };
+    var centroLabels    = { flores:'Flores Artificiais', globos:'Globos', nenhum:'Sem Centro' };
+    var talherLabels    = { prata:'Prata', dourado:'Dourado' };
+
+    function getTableColor() { return toalhaColors[state.toalha] || '#f8f8f8'; }
+    function getGuardColor()  { return guardanapoColors[state.guardanapo] || '#f5f5f5'; }
+
+    function isLight(hex) {
+      var r = parseInt(hex.slice(1,3),16);
+      var g = parseInt(hex.slice(3,5),16);
+      var b = parseInt(hex.slice(5,7),16);
+      return (r*0.299 + g*0.587 + b*0.114) > 140;
+    }
+
+    // Draw a wine glass shape
+    function drawWineGlass(x, y, color, scale) {
+      scale = scale || 1;
+      var w = 10 * scale, h = 22 * scale;
+      return '<g opacity="0.9">'
+        + '<ellipse cx="'+x+'" cy="'+(y-h*0.05)+'" rx="'+(w*0.5)+'" ry="'+(h*0.08)+'" fill="'+color+'" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>'
+        + '<path d="M'+(x-w*0.5)+','+(y-h*0.05)+' Q'+(x-w*0.55)+','+(y+h*0.35)+' '+(x-w*0.1)+','+(y+h*0.45)+' L'+(x+w*0.1)+','+(y+h*0.45)+' Q'+(x+w*0.55)+','+(y+h*0.35)+' '+(x+w*0.5)+','+(y-h*0.05)+'Z" fill="'+color+'" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>'
+        + '<line x1="'+x+'" y1="'+(y+h*0.45)+'" x2="'+x+'" y2="'+(y+h*0.72)+'" stroke="rgba(255,255,255,0.6)" stroke-width="'+(1.2*scale)+'"/>'
+        + '<ellipse cx="'+x+'" cy="'+(y+h*0.72)+'" rx="'+(w*0.35)+'" ry="'+(h*0.06)+'" fill="'+color+'" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>'
+        + '</g>';
+    }
+
+    function drawChampagne(x, y, color, scale) {
+      scale = scale || 1;
+      var w = 7 * scale, h = 24 * scale;
+      return '<g opacity="0.9">'
+        + '<path d="M'+(x-w*0.35)+','+(y)+' L'+(x-w*0.5)+','+(y+h*0.55)+' L'+(x+w*0.5)+','+(y+h*0.55)+' L'+(x+w*0.35)+','+(y)+'Z" fill="'+color+'" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>'
+        + '<line x1="'+x+'" y1="'+(y+h*0.55)+'" x2="'+x+'" y2="'+(y+h*0.78)+'" stroke="rgba(255,255,255,0.6)" stroke-width="'+(1.2*scale)+'"/>'
+        + '<ellipse cx="'+x+'" cy="'+(y+h*0.78)+'" rx="'+(w*0.38)+'" ry="'+(h*0.055)+'" fill="'+color+'" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>'
+        + '</g>';
+    }
+
+    function drawWaterGlass(x, y, color, scale) {
+      scale = scale || 1;
+      var w = 10 * scale, h = 18 * scale;
+      return '<g opacity="0.85">'
+        + '<path d="M'+(x-w*0.38)+','+(y)+' L'+(x-w*0.5)+','+(y+h*0.85)+' L'+(x+w*0.5)+','+(y+h*0.85)+' L'+(x+w*0.38)+','+(y)+'Z" fill="'+color+'" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>'
+        + '</g>';
+    }
+
+    function drawGlass(x, y, tipo, scale) {
+      var col = 'rgba(200,230,255,0.55)';
+      if (tipo === 'vinho')     return drawWineGlass(x, y, col, scale);
+      if (tipo === 'champanhe') return drawChampagne(x, y, col, scale);
+      return drawWaterGlass(x, y, col, scale);
+    }
+
+    function drawPlate(cx, cy, r, baseColor) {
+      var bc = baseColor || '#e0e0e0';
+      var light = isLight(bc);
+      var stroke = light ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)';
+      return '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+bc+'" stroke="'+stroke+'" stroke-width="2"/>'
+           + '<circle cx="'+cx+'" cy="'+cy+'" r="'+(r*0.72)+'" fill="white" stroke="'+stroke+'" stroke-width="1.5"/>';
+    }
+
+    function drawNapkin(cx, cy, color) {
+      var nc = color;
+      var tip = cy - 28;
+      return '<polygon points="'+(cx)+','+(tip)+' '+(cx-20)+','+(cy+10)+' '+(cx+20)+','+(cy+10)+'" fill="'+nc+'" opacity="0.9" stroke="rgba(255,255,255,0.3)" stroke-width="1" transform="rotate(-5 '+cx+' '+cy+')"/>';
+    }
+
+    function drawFork(x, y, color) {
+      var c = color === 'dourado' ? '#c9a84c' : '#b0b0b8';
+      return '<g><rect x="'+(x-1)+'" y="'+(y-22)+'" width="2" height="44" rx="1" fill="'+c+'"/>'
+           + '<rect x="'+(x-4)+'" y="'+(y-22)+'" width="1.2" height="16" rx="0.6" fill="'+c+'"/>'
+           + '<rect x="'+(x+3)+'" y="'+(y-22)+'" width="1.2" height="16" rx="0.6" fill="'+c+'"/></g>';
+    }
+
+    function drawKnife(x, y, color) {
+      var c = color === 'dourado' ? '#c9a84c' : '#b0b0b8';
+      return '<g><rect x="'+(x-1)+'" y="'+(y-22)+'" width="2" height="44" rx="1" fill="'+c+'"/>'
+           + '<path d="M'+(x-1)+','+(y-22)+' Q'+(x+6)+','+(y-10)+' '+(x+1)+','+(y+4)+'L'+(x-1)+','+(y+4)+'Z" fill="'+c+'"/></g>';
+    }
+
+    function drawFlowerCentre(cx, cy) {
+      var svg = '';
+      var petals = ['#e8a0b4','#f5c2d0','#d48fa8','#f0b8c8','#c97a95'];
+      for (var i = 0; i < 5; i++) {
+        var ang = (i / 5) * 2 * Math.PI;
+        var px = cx + Math.cos(ang) * 11;
+        var py = cy + Math.sin(ang) * 11;
+        svg += '<ellipse cx="'+px+'" cy="'+py+'" rx="7" ry="10" fill="'+petals[i]+'" opacity="0.92" transform="rotate('+(i*72+90)+' '+px+' '+py+')"/>';
+      }
+      svg += '<ellipse cx="'+cx+'" cy="'+cy+'" rx="5" ry="5" fill="#f5e642" opacity="0.95"/>';
+      // Vase
+      svg += '<path d="M'+(cx-8)+','+(cy+14)+' Q'+(cx-10)+','+(cy+30)+' '+(cx)+','+(cy+32)+' Q'+(cx+10)+','+(cy+30)+' '+(cx+8)+','+(cy+14)+'Z" fill="#8b7355" opacity="0.8"/>';
+      return svg;
+    }
+
+    function drawGlobosCentre(cx, cy) {
+      var cols = ['#e74c3c','#3498db','#f1c40f','#2ecc71','#9b59b6'];
+      var svg = '';
+      var positions = [[-14,-18],[0,-26],[14,-18],[-8,-8],[8,-8]];
+      positions.forEach(function(p, i) {
+        var bx = cx + p[0], by = cy + p[1];
+        svg += '<circle cx="'+bx+'" cy="'+by+'" r="10" fill="'+cols[i % cols.length]+'" opacity="0.88" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>';
+        svg += '<line x1="'+bx+'" y1="'+(by+10)+'" x2="'+cx+'" y2="'+(cy+28)+'" stroke="rgba(0,0,0,0.25)" stroke-width="0.8"/>';
+      });
+      svg += '<circle cx="'+cx+'" cy="'+(cy+28)+'" r="2" fill="#555"/>';
+      return svg;
+    }
+
+    function drawCentre(cx, cy, tipo) {
+      if (tipo === 'flores')  return drawFlowerCentre(cx, cy);
+      if (tipo === 'globos')  return drawGlobosCentre(cx, cy);
+      return '';
+    }
+
+    function drawChair(cx, cy, tipo, scale) {
+      scale = scale || 1;
+      var isGold = tipo === 'tiffany-gold';
+      var frame  = isGold ? '#c9a84c' : '#e8e8e8';
+      var seat   = isGold ? '#d4af5a' : '#f2f2f2';
+      var w = 36 * scale, h = 38 * scale;
+      return '<g>'
+        + '<rect x="'+(cx-w/2)+'" y="'+(cy-h*0.1)+'" width="'+w+'" height="'+(h*0.3)+'" rx="'+(3*scale)+'" fill="'+seat+'" stroke="'+frame+'" stroke-width="'+(1.5*scale)+'"/>'
+        + '<rect x="'+(cx-w/2)+'" y="'+(cy-h*0.1-h*0.5)+'" width="'+w+'" height="'+(h*0.45)+'" rx="'+(3*scale)+'" fill="'+seat+'" stroke="'+frame+'" stroke-width="'+(1.5*scale)+'" opacity="0.7"/>'
+        + '<line x1="'+(cx-w/2+4*scale)+'" y1="'+(cy+h*0.2)+'" x2="'+(cx-w/2+2*scale)+'" y2="'+(cy+h*0.55)+'" stroke="'+frame+'" stroke-width="'+(2*scale)+'"/>'
+        + '<line x1="'+(cx+w/2-4*scale)+'" y1="'+(cy+h*0.2)+'" x2="'+(cx+w/2-2*scale)+'" y2="'+(cy+h*0.55)+'" stroke="'+frame+'" stroke-width="'+(2*scale)+'"/>'
+        + '</g>';
+    }
+
+    function renderSVG() {
+      var W = 640, H = 500;
+      var tc  = getTableColor();
+      var light = isLight(tc);
+      var tl  = light ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.08)';
+      var gc  = getGuardColor();
+
+      // Base colors for plate based on table
+      var plateBaseColors = {
+        dourada:   '#c9a84c',
+        palha:     '#c8a45a',
+        prata:     '#b0b0b8',
+        vermelha:  '#c0392b',
+        vidro:     '#aad4e8'
+      };
+      var baseCol = '#d4c5a9';
+
+      var svg = '<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" style="display:block;">';
+
+      // Background room
+      svg += '<defs>'
+           + '<radialGradient id="roomGrad" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#e8eaed"/><stop offset="100%" stop-color="#d0d3d8"/></radialGradient>'
+           + '<filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.18"/></filter>'
+           + '</defs>';
+      svg += '<rect width="'+W+'" height="'+H+'" fill="url(#roomGrad)"/>';
+
+      // Floor suggestion
+      svg += '<ellipse cx="320" cy="420" rx="260" ry="60" fill="rgba(0,0,0,0.04)"/>';
+
+      // Table surface (oval)
+      var tx = 320, ty = 260, trx = 220, try_ = 95;
+      svg += '<ellipse cx="'+tx+'" cy="'+ty+'" rx="'+trx+'" ry="'+try_+'" fill="'+tc+'" filter="url(#shadow)" stroke="'+tl+'" stroke-width="2"/>';
+      // Table highlight
+      svg += '<ellipse cx="'+tx+'" cy="'+(ty-20)+'" rx="'+(trx*0.7)+'" ry="'+(try_*0.35)+'" fill="rgba(255,255,255,0.12)"/>';
+
+      // Chairs: top 3, bottom 3
+      var chairPositions = [
+        [180,165,0.82],[320,148,0.82],[460,165,0.82],
+        [180,358,0.82],[320,374,0.82],[460,358,0.82]
+      ];
+      chairPositions.forEach(function(cp) {
+        svg += drawChair(cp[0], cp[1], state.cadeira, cp[2]);
+      });
+
+      // Place settings: 3 top, 3 bottom
+      var places = [
+        {x:175, y:245, flip:false},
+        {x:320, y:228, flip:false},
+        {x:462, y:245, flip:false},
+        {x:175, y:278, flip:true},
+        {x:320, y:294, flip:true},
+        {x:462, y:278, flip:true}
+      ];
+
+      places.forEach(function(p) {
+        // Base
+        svg += drawPlate(p.x, p.y, 22, baseCol);
+        // Plate
+        svg += drawPlate(p.x, p.y, 18, '#fff');
+        // Napkin
+        svg += drawNapkin(p.x, p.y + (p.flip ? 8 : -8), gc);
+        // Fork left
+        svg += drawFork(p.x - 28, p.y, state.talher);
+        // Knife right
+        svg += drawKnife(p.x + 28, p.y, state.talher);
+        // Glass — top right of plate
+        var gx = p.x + 32, gy = p.y - 24;
+        svg += drawGlass(gx, gy, state.copo, 0.9);
+      });
+
+      // Centre piece
+      svg += drawCentre(320, 225, state.centro);
+
+      svg += '</svg>';
+      return svg;
+    }
+
+    function updatePreview() {
+      document.getElementById('sim-canvas-wrap').innerHTML = renderSVG();
+    }
+
+    // Click handlers
+    document.querySelectorAll('.sim-color').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var group = this.getAttribute('data-group');
+        document.querySelectorAll('.sim-color[data-group="'+group+'"]').forEach(function(c){ c.classList.remove('selected'); });
+        this.classList.add('selected');
+        state[group] = this.getAttribute('data-value');
+        updatePreview();
+      });
+    });
+
+    document.querySelectorAll('.sim-opt').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var group = this.getAttribute('data-group');
+        document.querySelectorAll('.sim-opt[data-group="'+group+'"]').forEach(function(c){ c.classList.remove('selected'); });
+        this.classList.add('selected');
+        state[group] = this.getAttribute('data-value');
+        updatePreview();
+      });
+    });
+
+    // WhatsApp button
+    document.getElementById('simWhatsapp').addEventListener('click', function() {
+      var msg = '🌟 *Simulação de Evento — Alora Eventos*\n\n'
+        + 'Olá! Gostaria de fazer uma reserva com a seguinte configuração:\n\n'
+        + '🍽️ *Toalha de Mesa:* ' + toalhaLabels[state.toalha] + '\n'
+        + '💺 *Cadeiras:* ' + cadeiraLabels[state.cadeira] + '\n'
+        + '🎀 *Guardanapos:* ' + guardLabels[state.guardanapo] + '\n'
+        + '🥂 *Copos:* ' + copoLabels[state.copo] + '\n'
+        + '🌸 *Centro de Mesa:* ' + centroLabels[state.centro] + '\n'
+        + '🍴 *Talheres:* ' + talherLabels[state.talher] + '\n\n'
+        + 'Podem indicar disponibilidade e preços?';
+      window.open('https://wa.me/258843988947?text=' + encodeURIComponent(msg), '_blank');
+    });
+
+    // Initial render
+    updatePreview();
+  </script>
+</body>
+</html>

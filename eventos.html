@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alora Eventos — Início</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="eventos.html">Alora <span>Eventos</span></a></div>
+    <div class="nav-links">
+      <a href="eventos.html" class="active">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="simulador.html">Simulador</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="contactos.html">Contactos</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Maputo, Moçambique</span>
+      <h1>O Seu Sonho,<br><em>A Nossa Decoração</em></h1>
+      <p>Alugamos mesas, cadeiras, talheres, copos e muito mais para tornar o seu evento inesquecível.</p>
+      <div class="hero-btns">
+        <a href="servicos.html" class="btn-primary">Ver Serviços</a>
+        <a href="simulador.html" class="btn-outline">Simular Evento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat">
+      <span class="stat-number" data-target="20">+0</span>
+      <span class="stat-label">Eventos Decorados</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="200">+0</span>
+      <span class="stat-label">Materiais Alugados</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="40">+0</span>
+      <span class="stat-label">Clientes Atendidos</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="5">+0</span>
+      <span class="stat-label">Anos de Experiência</span>
+    </div>
+  </section>
+
+  <!-- Sobre nós -->
+  <section style="background: var(--white); padding: 70px 6%;">
+    <div style="max-width:960px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+      <div class="fade-in">
+        <span class="section-eyebrow">Quem Somos</span>
+        <h2 style="font-size:2.2rem; color:var(--navy); margin:10px 0 18px;">Tornamos Eventos em Memórias</h2>
+        <p style="color:var(--text-mid); margin-bottom:16px; font-size:0.97rem;">A Alora Eventos nasceu com uma missão simples: oferecer materiais de qualidade e serviços de decoração que transformam cada evento numa experiência única e memorável.</p>
+        <p style="color:var(--text-mid); font-size:0.97rem; margin-bottom:28px;">Baseados em Maputo, servimos famílias, empresas e organizações em toda a cidade — desde casamentos íntimos a grandes celebrações corporativas.</p>
+        <a href="contactos.html" class="btn-primary">Fale Connosco</a>
+      </div>
+      <div class="fade-in" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div style="background:var(--navy); border-radius:var(--radius-lg); padding:32px 24px; text-align:center; color:var(--white);">
+          <div style="font-size:2rem; margin-bottom:10px;">🎊</div>
+          <h4 style="font-size:1rem; color:var(--gold-light); margin-bottom:6px;">Casamentos</h4>
+          <p style="font-size:0.82rem; color:rgba(255,255,255,0.65);">Decoração elegante para o dia mais especial</p>
+        </div>
+        <div style="background:var(--gold-pale); border-radius:var(--radius-lg); padding:32px 24px; text-align:center; border:1px solid rgba(201,168,76,0.3);">
+          <div style="font-size:2rem; margin-bottom:10px;">🏢</div>
+          <h4 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">Corporativo</h4>
+          <p style="font-size:0.82rem; color:var(--text-mid);">Eventos empresariais com profissionalismo</p>
+        </div>
+        <div style="background:var(--gold-pale); border-radius:var(--radius-lg); padding:32px 24px; text-align:center; border:1px solid rgba(201,168,76,0.3);">
+          <div style="font-size:2rem; margin-bottom:10px;">🎂</div>
+          <h4 style="font-size:1rem; color:var(--navy); margin-bottom:6px;">Aniversários</h4>
+          <p style="font-size:0.82rem; color:var(--text-mid);">Celebrações únicas e personalizadas</p>
+        </div>
+        <div style="background:var(--navy); border-radius:var(--radius-lg); padding:32px 24px; text-align:center; color:var(--white);">
+          <div style="font-size:2rem; margin-bottom:10px;">🌟</div>
+          <h4 style="font-size:1rem; color:var(--gold-light); margin-bottom:6px;">Outros Eventos</h4>
+          <p style="font-size:0.82rem; color:rgba(255,255,255,0.65);">Batizados, formaturas e muito mais</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Simulador -->
+  <section class="fade-in" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); padding:70px 24px; text-align:center;">
+    <span class="section-eyebrow" style="color:var(--gold);">Novidade</span>
+    <h2 style="font-size:2.2rem; color:var(--white); margin:10px 0 16px;">Simule o Seu Evento Online</h2>
+    <p style="color:rgba(255,255,255,0.72); max-width:500px; margin:0 auto 30px;">Escolha as cores da toalha, das cadeiras, dos guardanapos e veja como ficará a sua mesa — antes mesmo de reservar.</p>
+    <a href="simulador.html" class="btn-primary">Abrir Simulador</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="eventos.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="simulador.html">Simulador</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="contactos.html">Contactos</a>
+    </div>
+    <p>&copy; 2025 <strong>Alora Eventos</strong> — All Ventures. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a class="whatsapp-float" href="https://wa.me/258843988947" target="_blank" title="Contactar pelo WhatsApp">💬</a>
+
+  <script src="script.js"></script>
+  <script>
+    // hamburger toggle
+    document.getElementById('navToggle').addEventListener('click', function(){
+      this.classList.toggle('open');
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
